@@ -16,10 +16,10 @@ public class UserServiceImpl implements UserService{
 	public UserClass getUserClass(int i) {
 		UserClass uc = new UserClass();
 		uc.setUiNo(i);
-		uc.setUiName("ÀÌ¸§"+i);
+		uc.setUiName("ì´ë¦„"+i);
 		uc.setUiAge(i);
-		uc.setUiId("¾ÆÀÌµğ"+i);
-		uc.setAddress("ÁÖ¼Ò"+i);
+		uc.setUiId("ì•„ì´ë””"+i);
+		uc.setAddress("ì£¼ì†Œ"+i);
 		return uc;
 	}
 	private List<UserClass> getUserClassList(){

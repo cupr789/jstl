@@ -3,6 +3,7 @@ package com.jstl.test.service.impl;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.jstl.test.dao.ClassDao;
 import com.jstl.test.dao.impl.ClassDaoImpl;
@@ -15,7 +16,8 @@ public class ClassServiceImpl implements ClassService{
 	public void getClassList(HttpServletRequest req) {
 		List<ClassInfo> classList = cd.getClassList();
 		System.out.println(classList);
-		req.setAttribute("classList", classList);
+		HttpSession ss = req.getSession();
+		ss.setAttribute("classList", classList);
 	}
 
 }

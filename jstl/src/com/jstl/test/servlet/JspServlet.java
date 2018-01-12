@@ -39,7 +39,6 @@ public class JspServlet extends HttpServlet {
 		res.setContentType("text/html;charset=utf-8");
 		PrintWriter out = res.getWriter();
 		String uri = req.getRequestURI();
-		System.out.println(uri+"         ¿øÁ¶uri");
 		uri = uri.replace("jstl/", "");
 		uri = "/WEB-INF" + uri + ".jsp";
 		
@@ -56,13 +55,21 @@ public class JspServlet extends HttpServlet {
 		}
 		
 		
+		if(uri.indexOf("class/search")!=-1) {
+			String keyword= req.getParameter("param");
+			System.out.println(keyword);
+			req.setAttribute("keyword", keyword);
+			uri ="/WEB-INF/view/class/list.jsp";
+		}
+		
+		
 		
 		if(uri.indexOf("class/list")!=-1) {
 			ClassService cs = new ClassServiceImpl();
 			cs.getClassList(req);
 		}
 		
-		System.out.println("JspServlet ¿¡¼­ uri : "+uri);
+		System.out.println("JspServlet ï¿½ï¿½ï¿½ï¿½ uri : "+uri);
 		RequestDispatcher rd = req.getRequestDispatcher(uri);
 		rd.forward(req, res);
 	}
