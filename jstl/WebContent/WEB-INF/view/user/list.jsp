@@ -45,12 +45,5 @@
 		</c:forEach>
 	</table>
 </body>
-<script>
-	/* function searchUser(){
-	 document.getElementById("table").innerHTML = "";
-	 for(var u of "${userList}"){
-	 document.getElementById("table").innerHTML += "<tr><td>유저번호 :  ${user.uiNo} </th><th>유저 아이디 :  ${user.uiId} </th><th>유저 이름 : ${user.uiName} </th><th>유저 나이 :  ${user.uiAge} </th></tr>"
-	 }
-	 }	 */
-</script>
+
 </html>
